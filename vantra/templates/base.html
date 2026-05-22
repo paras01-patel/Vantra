@@ -42,7 +42,7 @@
 /* NAV LINKS */
 .nav-links{
     display: flex;
-    gap: 18px;
+    gap: 60px;
     list-style: none;
     align-items: center;
 }
@@ -50,15 +50,14 @@
 .nav-links li a{
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    transition: 0.3s;
 }
 
 .nav-links li a:hover{
     color: black;
-    
 }
 
-/* dropdown */
+/* DROPDOWN */
 .dropdown{
     position: relative;
 }
@@ -69,17 +68,20 @@
     top: 40px;
     right: 0;
     background: #1e1e1e;
-    min-width: 180px;
+    min-width: 220px;
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    max-height: 350px;
+    overflow-y: auto;
 }
 
 .dropdown-menu a{
     display: block;
-    padding: 10px;
+    padding: 12px;
     color: white;
     text-decoration: none;
+    border-bottom: 1px solid #333;
 }
 
 .dropdown-menu a:hover{
@@ -95,16 +97,19 @@
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .login-btn:hover{
     border-color: #ffb300;
+    color: #ffb300;
 }
 
 /* ===== CONTENT ===== */
 .content{
     margin-top: 80px;
     min-height: 70vh;
+    padding: 20px;
 }
 
 /* ===== FOOTER ===== */
@@ -134,6 +139,7 @@
 
 .footer-col h3{
     color: #ffb300;
+    margin-bottom: 10px;
 }
 
 .footer-col a{
@@ -143,12 +149,18 @@
     margin: 6px 0;
 }
 
+.footer-col a:hover{
+    color: #ffb300;
+}
+
 .footer-bottom{
     text-align: center;
     padding: 15px;
     background: #000;
     color: #888;
 }
+
+/* MESSAGE */
 .message{
     background: #111;
     color: white;
@@ -172,43 +184,171 @@
         <img src="{% static 'images/re.png' %}" alt="Bantra">
     </div>
 
+    <!-- NAV LINKS -->
     <ul class="nav-links">
 
         <li><a href="#">Home</a></li>
 
+        <!-- MEN -->
         <li class="dropdown">
+
             <a href="#" onclick="toggleMenu(event,'menMenu')">Men</a>
+
             <div class="dropdown-menu" id="menMenu">
+
                 <a href="#">T-Shirts</a>
                 <a href="#">Shirts</a>
                 <a href="#">Jeans</a>
+                <a href="#">Hoodies</a>
+                <a href="#">Jackets</a>
+                <a href="#">Sweaters</a>
+                <a href="#">Track Pants</a>
+                <a href="#">Shorts</a>
+
             </div>
+
         </li>
 
-        <!-- ACCOUNT MENU -->
+        <!-- WOMEN -->
+        <li class="dropdown">
+
+            <a href="#" onclick="toggleMenu(event,'womenMenu')">Women</a>
+
+            <div class="dropdown-menu" id="womenMenu">
+
+                <a href="#">Kurtis</a>
+                <a href="#">Tops</a>
+                <a href="#">T-Shirts</a>
+                <a href="#">Shirts</a>
+                <a href="#">Jeans</a>
+                <a href="#">Palazzo</a>
+                <a href="#">Skirts</a>
+                <a href="#">Dresses</a>
+                <a href="#">Lehengas</a>
+                <a href="#">Sarees</a>
+                <a href="#">Jumpsuits</a>
+                <a href="#">Co-Ord Sets</a>
+                <a href="#">Night Suits</a>
+                <a href="#">Hoodies</a>
+                <a href="#">Sweaters</a>
+                <a href="#">Jackets</a>
+
+            </div>
+
+        </li>
+        <!-- ELECTRONICS -->
+<li class="dropdown">
+
+    <a href="#" onclick="toggleMenu(event,'electronicsMenu')">
+        Electronics
+    </a>
+
+    <div class="dropdown-menu" id="electronicsMenu">
+
+        <a href="#">Smartphones</a>
+        <a href="#">Laptops</a>
+        <a href="#">Smart Watches</a>
+        <a href="#">Headphones</a>
+        <a href="#">Bluetooth Speakers</a>
+        <a href="#">Gaming Consoles</a>
+        <a href="#">Keyboards</a>
+        <a href="#">Mouse</a>
+        <a href="#">Monitors</a>
+        <a href="#">Power Banks</a>
+        <a href="#">Cameras</a>
+        <a href="#">Printers</a>
+        <a href="#">Trimmers</a>
+        <a href="#">Chargers</a>
+        <a href="#">USB Cables</a>
+
+    </div>
+
+</li>
+
+<!-- GYM -->
+<li class="dropdown">
+
+    <a href="#" onclick="toggleMenu(event,'gymMenu')">
+        Gym
+    </a>
+
+    <div class="dropdown-menu" id="gymMenu">
+
+        <a href="#">Gym T-Shirts</a>
+        <a href="#">Track Pants</a>
+        <a href="#">Gym Shorts</a>
+        <a href="#">Gym Hoodies</a>
+        <a href="#">Tank Tops</a>
+        <a href="#">Gym Shoes</a>
+        <a href="#">Yoga Pants</a>
+        <a href="#">Compression Wear</a>
+        <a href="#">Protein Shakers</a>
+        <a href="#">Dumbbells</a>
+        <a href="#">Resistance Bands</a>
+        <a href="#">Gym Gloves</a>
+        <a href="#">Yoga Mats</a>
+        <a href="#">Gym Bags</a>
+        <a href="#">Fitness Accessories</a>
+
+    </div>
+
+</li>
+
+<!-- FOOTWEAR -->
+<li class="dropdown">
+
+    <a href="#" onclick="toggleMenu(event,'footwearMenu')">
+        Footwear
+    </a>
+
+    <div class="dropdown-menu" id="footwearMenu">
+
+        <a href="#">Sneakers</a>
+        <a href="#">Running Shoes</a>
+        <a href="#">Casual Shoes</a>
+        <a href="#">Formal Shoes</a>
+        <a href="#">Sports Shoes</a>
+        <a href="#">Boots</a>
+        <a href="#">Sandals</a>
+        <a href="#">Slippers</a>
+        <a href="#">Loafers</a>
+        <a href="#">Heels</a>
+        <a href="#">Flats</a>
+        <a href="#">Flip Flops</a>
+        <a href="#">Canvas Shoes</a>
+        <a href="#">Ethnic Footwear</a>
+        <a href="#">Socks</a>
+
+    </div>
+
+</li><!-- ACCOUNT -->
         <li class="dropdown">
 
             <div class="login-btn" onclick="toggleMenu(event,'accMenu')">
-                Account
+
+                {% if request.session.username %}
+                    👤 {{ request.session.username }}
+                {% else %}
+                    Account
+                {% endif %}
+
             </div>
 
             <div class="dropdown-menu" id="accMenu">
 
-    {% if request.session.username %}
+                {% if request.session.username %}
 
-        <a href="#">👤 {{ request.session.username }}</a>
-        <a href="{% url 'logout' %}">🚪 Logout</a>
+                    <a href="#">👤 {{ request.session.username }}</a>
+                    <a href="{% url 'logout' %}">🚪 Logout</a>
 
-    {% else %}
+                {% else %}
 
-        <a href="{% url 'signup' %}">📝 Sign Up</a>
-        <a href="{% url 'login' %}">🔑 Login</a>
+                    <a href="{% url 'signup' %}">📝 Sign Up</a>
+                    <a href="{% url 'login' %}">🔑 Login</a>
 
-    {% endif %}
+                {% endif %}
 
-</div>
-
-            
+            </div>
 
         </li>
 
@@ -221,6 +361,7 @@
 
     {% block content %}
     {% endblock %}
+
 </div>
 
 <!-- FOOTER -->
@@ -230,26 +371,34 @@
 
         <div class="footer-col">
             <h2 class="brand">Bantra</h2>
-            <p>Your trusted e-commerce platform for quality products and best deals.</p>
+            <p>
+                Your trusted e-commerce platform for quality products and best deals.
+            </p>
         </div>
 
         <div class="footer-col">
             <h3>Quick Links</h3>
+
             <a href="#">Home</a>
             <a href="#">Shop</a>
             <a href="#">Offers</a>
+
         </div>
 
         <div class="footer-col">
             <h3>Customer Care</h3>
+
             <a href="#">Help Center</a>
             <a href="#">Returns</a>
             <a href="#">Contact</a>
+
         </div>
 
         <div class="footer-col">
             <h3>Contact</h3>
+
             <p>Email: support@bantra.com</p>
+
         </div>
 
     </div>
@@ -261,27 +410,41 @@
 </footer>
 
 <script>
+
 function toggleMenu(event,id){
+
     event.preventDefault();
 
     let menu = document.getElementById(id);
 
     document.querySelectorAll(".dropdown-menu").forEach(m=>{
+
         if(m.id !== id){
             m.style.display = "none";
         }
+
     });
 
-    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    menu.style.display =
+    (menu.style.display === "block")
+    ? "none"
+    : "block";
 }
 
 document.addEventListener("click", function(e){
+
     if(!e.target.closest(".dropdown")){
+
         document.querySelectorAll(".dropdown-menu").forEach(m=>{
+
             m.style.display = "none";
+
         });
+
     }
+
 });
+
 </script>
 
 </body>
