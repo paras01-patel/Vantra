@@ -1,0 +1,146 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Bantra{% endblock %}
+
+{% block content %}
+
+<style>
+/* ===== LOGIN WRAPPER ===== */
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 90px 20px;
+}
+
+/* ===== CARD ===== */
+.login-card{
+    width: 400px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* HEADER */
+.login-header{
+    background: linear-gradient(135deg, #111, #333);
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+.login-header h2{
+    margin: 0;
+}
+
+.login-header p{
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* BODY */
+.login-body{
+    padding: 25px;
+}
+
+/* INPUT */
+.input-box{
+    margin-bottom: 15px;
+}
+
+.input-box input{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-box input:focus{
+    border-color: orange;
+    box-shadow: 0 0 5px rgba(255,165,0,0.4);
+}
+
+/* BUTTON */
+.login-btn{
+    width: 100%;
+    padding: 12px;
+    background: orange;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover{
+    background: #ff6f00;
+}
+
+/* FOOTER */
+.login-footer{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.login-footer a{
+    color: orange;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* TAG */
+.tag{
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-top: 10px;
+}
+</style>
+
+<div class="login-wrapper">
+
+    <div class="login-card">
+
+        <!-- HEADER -->
+        <div class="login-header">
+            <h2>Welcome Back</h2>
+            <p>Login to continue shopping</p>
+        </div>
+
+        <!-- FORM -->
+        <div class="login-body">
+
+            <form method="POST">
+                {% csrf_token %}
+
+                <div class="input-box">
+                    <input type="text" name="username" placeholder="Username" required>
+                </div>
+
+                <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <div class="login-footer">
+                Don’t have an account? <a href="{% url 'signup' %}">Sign Up</a>
+            </div>
+
+            <div class="tag">
+                Secure Login • Fast Access • Trusted Platform
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

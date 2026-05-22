@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Bantra Dashboard</title>
+<title>{% block title %}Bantra Dashboard{% endblock %}</title>
 
 <style>
 
@@ -33,8 +33,8 @@
 
 /* LOGO */
 .logo img{
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    width: 70px;
     border-radius: 50%;
     object-fit: cover;
 }
@@ -42,61 +42,71 @@
 /* NAV LINKS */
 .nav-links{
     display: flex;
-    gap: 20px;
+    gap: 18px;
     list-style: none;
     align-items: center;
 }
 
-/* LINKS */
 .nav-links li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover{
+    color: #ffb300;
+}
+
+/* dropdown */
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background: #1e1e1e;
+    min-width: 180px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.dropdown-menu a{
+    display: block;
+    padding: 10px;
     color: white;
     text-decoration: none;
 }
 
-/* HOVER */
-.nav-links li a:hover{
-    color: #ffb300;
-
+.dropdown-menu a:hover{
+    background: #ffb300;
+    color: black;
 }
 
-/* SELECT DROPDOWN */
-.nav-select{
+/* ACCOUNT BUTTON */
+.login-btn{
     background: #1e1e1e;
     color: white;
-    border: none;
-    font-weight: bold;
+    border: 1px solid #444;
+    padding: 6px 12px;
+    border-radius: 6px;
     cursor: pointer;
-    outline: none;
 }
 
-.nav-select option{
-    background: #1e1e1e;
-    color: white;
+.login-btn:hover{
+    border-color: #ffb300;
 }
 
-.login{
-    background: #1e1e1e;
-    color: white;
-    border: none;
-    font-weight: bold;
-    cursor: pointer;
-    outline: none;
-    margin-left:400px;
-    margin-right:40px;
-    
-
+/* ===== CONTENT ===== */
+.content{
+    margin-top: 80px;
+    min-height: 70vh;
 }
 
-.login option{
-    background: #1e1e1e;
-    color: white;
-    padding:50px;
-    text:bold;  
-
-}
-
-
-
+/* ===== FOOTER ===== */
 .footer{
     background: #111;
     color: #fff;
@@ -119,17 +129,10 @@
 .brand{
     font-size: 28px;
     color: #ffb300;
-    margin-bottom: 10px;
 }
 
 .footer-col h3{
     color: #ffb300;
-    margin-bottom: 10px;
-}
-
-.footer-col p{
-    color: #ccc;
-    line-height: 1.6;
 }
 
 .footer-col a{
@@ -139,23 +142,25 @@
     margin: 6px 0;
 }
 
-.footer-col a:hover{
-    color: white;
-    padding-left: 5px;
-}
-
 .footer-bottom{
     text-align: center;
     padding: 15px;
     background: #000;
     color: #888;
-    font-size: 14px;
 }
-
+.message{
+    background: #111;
+    color: white;
+    padding: 12px;
+    margin: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+}
 
 </style>
 
 </head>
+
 <body>
 
 <!-- NAVBAR -->
@@ -166,64 +171,55 @@
         <img src="{% static 'images/re.png' %}" alt="Bantra">
     </div>
 
-    <!-- MENU -->
     <ul class="nav-links">
 
         <li><a href="#">Home</a></li>
 
-        <!-- MEN -->
-        <li>
-            <select class="nav-select">
-                <option>Men</option>
-                <option>T-Shirts</option>
-                <option>Shirts</option>
-                <option>Jeans</option>
-                <option>Shoes</option>
-            </select>
+        <li class="dropdown">
+            <a href="#" onclick="toggleMenu(event,'menMenu')">Men</a>
+            <div class="dropdown-menu" id="menMenu">
+                <a href="#">T-Shirts</a>
+                <a href="#">Shirts</a>
+                <a href="#">Jeans</a>
+            </div>
         </li>
 
-        <!-- WOMEN -->
-        <li>
-            <select class="nav-select">
-                <option>Women</option>
-                <option>Dresses</option>
-                <option>Kurti</option>
-                <option>Top Wear</option>
-                <option>Footwear</option>
-            </select>
+        <!-- ACCOUNT MENU -->
+        <li class="dropdown">
+
+            <div class="login-btn" onclick="toggleMenu(event,'accMenu')">
+                Account
+            </div>
+
+            <div class="dropdown-menu" id="accMenu">
+
+    {% if request.session.username %}
+
+        <a href="#">👤 {{ request.session.username }}</a>
+        <a href="{% url 'logout' %}">🚪 Logout</a>
+
+    {% else %}
+
+        <a href="{% url 'signup' %}">📝 Sign Up</a>
+        <a href="{% url 'login' %}">🔑 Login</a>
+
+    {% endif %}
+
+</div>
+
+            
+
         </li>
 
-        <!-- ELECTRONICS -->
-        <li>
-            <select class="nav-select">
-                <option>Electronics</option>
-                <option>Mobiles</option>
-                <option>Laptops</option>
-                <option>Headphones</option>
-                <option>Smart Watches</option>
-            </select>
-        </li>
-
-        <li>
-    <select class="nav-select">
-        <option>Fitness</option>
-        <option>Gym Equipment</option>
-        <option>Yoga Mats</option>
-        <option>Protein</option>
-        <option>Creatine</option>
-        <option>Sports Wear</option>
-        <option>Fitness Bands</option>
-        <option>Gym Accessories</option>
-    </select>
-</li>
-<li>
-    <select class="login">
-            <option>SginUp</option>
-            <option>Login</option>
-    </select>
-</li>
     </ul>
 
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+    {% block content %}
+    {% endblock %}
 </div>
 
 <!-- FOOTER -->
@@ -233,7 +229,7 @@
 
         <div class="footer-col">
             <h2 class="brand">Bantra</h2>
-            <p>Bantra is your trusted e-commerce platform for quality products, best deals and fast delivery.</p>
+            <p>Your trusted e-commerce platform for quality products and best deals.</p>
         </div>
 
         <div class="footer-col">
@@ -241,13 +237,11 @@
             <a href="#">Home</a>
             <a href="#">Shop</a>
             <a href="#">Offers</a>
-            <a href="#">Cart</a>
         </div>
 
         <div class="footer-col">
             <h3>Customer Care</h3>
             <a href="#">Help Center</a>
-            <a href="#">Shipping</a>
             <a href="#">Returns</a>
             <a href="#">Contact</a>
         </div>
@@ -255,8 +249,6 @@
         <div class="footer-col">
             <h3>Contact</h3>
             <p>Email: support@bantra.com</p>
-            <p>Phone: +91 98765 43210</p>
-            <p>India</p>
         </div>
 
     </div>
@@ -266,6 +258,30 @@
     </div>
 
 </footer>
+
+<script>
+function toggleMenu(event,id){
+    event.preventDefault();
+
+    let menu = document.getElementById(id);
+
+    document.querySelectorAll(".dropdown-menu").forEach(m=>{
+        if(m.id !== id){
+            m.style.display = "none";
+        }
+    });
+
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
+}
+
+document.addEventListener("click", function(e){
+    if(!e.target.closest(".dropdown")){
+        document.querySelectorAll(".dropdown-menu").forEach(m=>{
+            m.style.display = "none";
+        });
+    }
+});
+</script>
 
 </body>
 </html>
