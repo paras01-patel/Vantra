@@ -1,2 +1,111 @@
 {% extends "base.html" %}
-{% block content %}dhfihf{% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<style>
+
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        background-color: #fff7fb;
+        font-family: Arial, sans-serif;
+    }
+
+    /* ===== HERO IMAGE ===== */
+
+    .men-img{
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+    }
+
+    /* ===== PRODUCTS SECTION ===== */
+
+    .menn{
+        display: flex;
+        gap: 20px;
+        padding: 30px;
+        overflow-x: auto;
+        text-align: center;
+    }
+
+    .menn div{
+        min-width: 220px;
+        background: white;
+        padding: 15px;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .menn img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 20px;
+        border: 2px solid rgb(251, 205, 230);
+        padding: 10px;
+    }
+
+    .menn p{
+        margin-top: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        border:rgb(251, 205, 230) ;
+    }
+
+</style>
+
+<!-- ===== HERO SECTION ===== -->
+
+<section>
+    <div>
+        <img src="{% static 'images/men.png' %}" 
+             alt=""
+             class="men-img">
+    </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+
+<section class="menn">
+
+    <div>
+        <img src="{% static 'images/t-shirt.jpg' %}" alt="">
+        <p>T-Shirts</p>
+    </div>
+
+    <div>
+        <img src="{% static 'images/shirts.jpg' %}" alt="">
+        <p>Shirts</p>
+    </div>
+
+    <div>
+        <img src="{% static 'images/jeckets.jpg' %}" alt="">
+        <p>Jeckets</p>
+    </div>
+
+    <div>
+        <img src="{% static 'images/t-shirt.jpg' %}" alt="">
+        <p>Hoodies</p>
+    </div>
+
+    <div>
+        <img src="{% static 'images/t-shirt.jpg' %}" alt="">
+        <p>Jackets</p>
+    </div>
+
+    <div>
+        <img src="{% static 'images/t-shirt.jpg' %}" alt="">
+        <p>Sweaters</p>
+    </div>
+
+</section>
+
+{% endblock %}
