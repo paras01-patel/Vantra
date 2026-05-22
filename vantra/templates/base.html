@@ -1,0 +1,271 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bantra Dashboard</title>
+
+<style>
+
+/* ===== RESET ===== */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== NAVBAR ===== */
+.navbar{
+    height: 60px;
+    width: 100%;
+    background:#1e1e1e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* NAV LINKS */
+.nav-links{
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    align-items: center;
+}
+
+/* LINKS */
+.nav-links li a{
+    color: white;
+    text-decoration: none;
+}
+
+/* HOVER */
+.nav-links li a:hover{
+    color: #ffb300;
+
+}
+
+/* SELECT DROPDOWN */
+.nav-select{
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+}
+
+.nav-select option{
+    background: #1e1e1e;
+    color: white;
+}
+
+.login{
+    background: #1e1e1e;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    outline: none;
+    margin-left:400px;
+    margin-right:40px;
+    
+
+}
+
+.login option{
+    background: #1e1e1e;
+    color: white;
+    padding:50px;
+    text:bold;  
+
+}
+
+
+
+.footer{
+    background: #111;
+    color: #fff;
+    margin-top: 120px;
+}
+
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 50px 60px;
+    gap: 30px;
+}
+
+.footer-col{
+    flex: 1;
+    min-width: 200px;
+}
+
+.brand{
+    font-size: 28px;
+    color: #ffb300;
+    margin-bottom: 10px;
+}
+
+.footer-col h3{
+    color: #ffb300;
+    margin-bottom: 10px;
+}
+
+.footer-col p{
+    color: #ccc;
+    line-height: 1.6;
+}
+
+.footer-col a{
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin: 6px 0;
+}
+
+.footer-col a:hover{
+    color: white;
+    padding-left: 5px;
+}
+
+.footer-bottom{
+    text-align: center;
+    padding: 15px;
+    background: #000;
+    color: #888;
+    font-size: 14px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="{% static 'images/re.png' %}" alt="Bantra">
+    </div>
+
+    <!-- MENU -->
+    <ul class="nav-links">
+
+        <li><a href="#">Home</a></li>
+
+        <!-- MEN -->
+        <li>
+            <select class="nav-select">
+                <option>Men</option>
+                <option>T-Shirts</option>
+                <option>Shirts</option>
+                <option>Jeans</option>
+                <option>Shoes</option>
+            </select>
+        </li>
+
+        <!-- WOMEN -->
+        <li>
+            <select class="nav-select">
+                <option>Women</option>
+                <option>Dresses</option>
+                <option>Kurti</option>
+                <option>Top Wear</option>
+                <option>Footwear</option>
+            </select>
+        </li>
+
+        <!-- ELECTRONICS -->
+        <li>
+            <select class="nav-select">
+                <option>Electronics</option>
+                <option>Mobiles</option>
+                <option>Laptops</option>
+                <option>Headphones</option>
+                <option>Smart Watches</option>
+            </select>
+        </li>
+
+        <li>
+    <select class="nav-select">
+        <option>Fitness</option>
+        <option>Gym Equipment</option>
+        <option>Yoga Mats</option>
+        <option>Protein</option>
+        <option>Creatine</option>
+        <option>Sports Wear</option>
+        <option>Fitness Bands</option>
+        <option>Gym Accessories</option>
+    </select>
+</li>
+<li>
+    <select class="login">
+            <option>SginUp</option>
+            <option>Login</option>
+    </select>
+</li>
+    </ul>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-top">
+
+        <div class="footer-col">
+            <h2 class="brand">Bantra</h2>
+            <p>Bantra is your trusted e-commerce platform for quality products, best deals and fast delivery.</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">Offers</a>
+            <a href="#">Cart</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Customer Care</h3>
+            <a href="#">Help Center</a>
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact</h3>
+            <p>Email: support@bantra.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <p>India</p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Bantra. All Rights Reserved.</p>
+    </div>
+
+</footer>
+
+</body>
+</html>
