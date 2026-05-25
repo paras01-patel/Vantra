@@ -7,6 +7,9 @@ from django.contrib import messages
 def home(req):
     return render(req, "home.html")
 
+def tshirt(req):
+    return render(req,"tshirt.html")
+
 
 # ================= SIGNUP =================
 def signup(req):

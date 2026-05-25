@@ -1,0 +1,474 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .men{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .men div{
+        width: 220px;
+        height: 430px;
+        border: 1px solid rgb(237, 235, 235);
+        border-radius: 20px;
+        padding: 10px;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    .men div:hover{
+        transform: translateY(-5px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .men img{
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .men p{
+        font-size: 16px;
+        color: rgb(111, 110, 110);
+        margin-top: 10px;
+        font-size: 18px;
+    }
+
+    .men h5{
+        margin-top: 5px;
+        font-size: 24px;
+        font-weight: bold;
+        color: rgb(65, 64, 64);
+    }
+</style>
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/fd/24/c2/fd24c2ba3d2a2db934b56a09d245dc76.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/25/bb/1e25bbe6daf37180d43daa28ca92db77.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/f9/f7/01/f9f701caee52b947b47d3ee8043aaa6a.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4a/8a/9c/4a8a9ce9fce6dbc4f09dabad81e10915.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/736x/01/0c/69/010c69cf56a52081b6bcffccbb0e0f75.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/736x/b0/63/11/b0631105b9fd94f23d34dfccdbc14fbf.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/b0/63/11/b0631105b9fd94f23d34dfccdbc14fbf.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/46/c1/b3/46c1b3c0dc3ce275a25c8ac08cda4680.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/2e/00/63/2e00631fc989e873698f7bc0266a35f3.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/b6/f7/0a/b6f70a5b7778a7d56a6ab64a9479a517.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/03/0f/0b/030f0b6f4216de9e01d30aa656eef795.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/65/25/db/6525dbeaa80bea38e3cbd677533e70a6.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4c/68/55/4c68555002a9f7b4b0692bd3d07f04b8.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/43/1d/98/431d98471094a6932f32db23efb68ce7.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/43/1d/98/431d98471094a6932f32db23efb68ce7.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://img.staticdj.com/832fb2ba3a1c73146393f3b1ed016489_2056x.png" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/a8/d7/0c/a8d70c5712c71e35c38d06334e6c4da3.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/e0/1c/8d/e01c8d20f41ecb547b18adaabe8126ce.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/e0/1c/8d/e01c8d20f41ecb547b18adaabe8126ce.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/6b/d0/c5/6bd0c5eee1af1773f862ebd5443ffaa6.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/736x/6b/d0/c5/6bd0c5eee1af1773f862ebd5443ffaa6.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/736x/10/09/3e/10093e84b3575d4b425927fcd979e303.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/85/4c/cd/854ccd4ebf6cdfbdab3ff93e163aa584.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/76/01/a5/7601a59f9ac08dfc60cb0589b7e73003.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/48/d7/16/48d716da2e92c2558fc5ce1a1f4b2d78.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/59/1c/db/591cdb036aef743bd570ba898b3ed9cb.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/e5/e4/f4/e5e4f474521d6bdbb1378f872527502f.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/34/ed/70/34ed7043e4bd559cb62dfd50cb619d15.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/d5/d7/1ed5d723b019310e61c6beccbebdd74e.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/1d/5f/6f/1d5f6fc691e1947c87c45fe67a8a57e0.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/1d/5f/6f/1d5f6fc691e1947c87c45fe67a8a57e0.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/fd/24/c2/fd24c2ba3d2a2db934b56a09d245dc76.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/25/bb/1e25bbe6daf37180d43daa28ca92db77.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/f9/f7/01/f9f701caee52b947b47d3ee8043aaa6a.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4a/8a/9c/4a8a9ce9fce6dbc4f09dabad81e10915.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/fd/24/c2/fd24c2ba3d2a2db934b56a09d245dc76.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/25/bb/1e25bbe6daf37180d43daa28ca92db77.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/f9/f7/01/f9f701caee52b947b47d3ee8043aaa6a.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4a/8a/9c/4a8a9ce9fce6dbc4f09dabad81e10915.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/fd/24/c2/fd24c2ba3d2a2db934b56a09d245dc76.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/25/bb/1e25bbe6daf37180d43daa28ca92db77.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/f9/f7/01/f9f701caee52b947b47d3ee8043aaa6a.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4a/8a/9c/4a8a9ce9fce6dbc4f09dabad81e10915.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+
+<section class="men">
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/fd/24/c2/fd24c2ba3d2a2db934b56a09d245dc76.jpg" alt="">
+        <p>Classic White T-Shirt</p>
+        <h5>₹97</h5>
+    </div>
+    
+    <div>
+        <img src="https://i.pinimg.com/1200x/6d/54/53/6d54536b350baa093e812a3fb6473d1a.jpg" alt="">
+        <p>Black Oversized T-Shirt</p>
+        <h5>₹199</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/1e/25/bb/1e25bbe6daf37180d43daa28ca92db77.jpg" alt="">
+        <p>Stylish Casual Wear</p>
+        <h5>₹249</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/f9/f7/01/f9f701caee52b947b47d3ee8043aaa6a.jpg" alt="">
+        <p>Modern Street Style</p>
+        <h5>₹299</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/1200x/ac/65/a4/ac65a46c58c4dcdb5111d14fcd837f2a.jpg" alt="">
+        <p>Premium Cotton T-Shirt</p>
+        <h5>₹349</h5>
+    </div>
+
+    <div>
+        <img src="https://i.pinimg.com/736x/4a/8a/9c/4a8a9ce9fce6dbc4f09dabad81e10915.jpg" alt="">
+        <p>Trendy Fashion Tee</p>
+        <h5>₹399</h5>
+    </div>
+
+</section>
+
+{% endblock content %}
